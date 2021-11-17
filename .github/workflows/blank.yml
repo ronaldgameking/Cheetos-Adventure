@@ -1,35 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Unity - Builder
+- name: Unity - Builder
   # You may pin to the exact commit or the version.
   # uses: game-ci/unity-builder@c317d144c37b2004ae02490988ded7b934a182be
   uses: game-ci/unity-builder@v2.0-alpha-13
@@ -83,7 +52,7 @@ jobs:
     # The android keyaliasPass
     androidKeyaliasPass: # optional, default is 
     # Custom parameters to configure the build.
-    #Parameters must start with a hyphen (-) and may be followed by a value (without hyphen). Parameters without a value will be considered booleans (with a value of true).
+Parameters must start with a hyphen (-) and may be followed by a value (without hyphen). Parameters without a value will be considered booleans (with a value of true).
 
     customParameters: # optional, default is 
     # SSH Agent path to forward to the container
@@ -91,6 +60,6 @@ jobs:
     # User and optionally group (user or user:group or uid:gid) to give ownership of the resulting build artifacts
     chownFilesTo: # optional, default is 
     # Allows the branch of the build to be dirty, and still generate the build.
-    #Note that it is generally bad practice to modify your branch in a CI Pipeline. However there are exceptions where this might be needed. (use with care).
+Note that it is generally bad practice to modify your branch in a CI Pipeline. However there are exceptions where this might be needed. (use with care).
 
     allowDirtyBuild: # optional, default is 
