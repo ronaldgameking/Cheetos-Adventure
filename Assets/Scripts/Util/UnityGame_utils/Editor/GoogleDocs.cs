@@ -114,7 +114,8 @@ public class GoogleDocs : EditorWindow
         var request = new HttpRequestMessage(new HttpMethod("POST"), RequestUri);
         var requestInsult = new HttpRequestMessage(new HttpMethod("GET"), "https://evilinsult.com/generate_insult.php?lang=en&type=text");
         var responseInsult = await client.SendAsync(requestInsult);
-        string insult = responseInsult.Content.ReadAsStringAsync().Result.Replace("&quot;", "\"");
+        string insult = Uri.UnescapeDataString(responseInsult.Content.ReadAsStringAsync().Result.Replace("&quot;", "\""));
+        
         System.Threading.Thread.Sleep(100);
         //Set message
         request.Content = new StringContent(string.Format("{{\"content\": \"Hello there I can see you <@!287848412999581696> Your insult is now: {0}\"}}", Uri.EscapeDataString(insult)));

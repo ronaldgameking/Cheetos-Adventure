@@ -9,12 +9,14 @@ public class Health : MonoBehaviour
     public int MaxHp { get; private set; }
 
     public int Hitpoints;
-    public bool UseCallback = false;
     public bool DontDestroy = false;
 
+    //Please use these, I worked hard on these :(
     public SimpleCallback D_onDeathCallback;
     public SimpleCallback D_onDamageCallback;
     
+    //Don't use these they're too simple :)
+    // Also full qualifying 
     public UnityEngine.Events.UnityEvent UE_onDeathCallback;
     public UnityEngine.Events.UnityEvent UE_onDamageCallback;
 
@@ -28,18 +30,12 @@ public class Health : MonoBehaviour
         Hitpoints += _hp;
         if (Hitpoints <= 0)
         {
-            //.
-            if (UseCallback)
-            {
-                if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
-                    D_onDeathCallback?.Invoke();
-                else
-                    UE_onDeathCallback?.Invoke();
-            }
+            if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
+                D_onDeathCallback?.Invoke();
+            else
+                UE_onDeathCallback?.Invoke();
             if (!DontDestroy)
-            {
                 Destroy(gameObject);
-            }
         }
         if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
             D_onDamageCallback?.Invoke();
