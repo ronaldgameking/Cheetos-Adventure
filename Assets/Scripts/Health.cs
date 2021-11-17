@@ -28,10 +28,10 @@ public class Health : MonoBehaviour
         Hitpoints += _hp;
         if (Hitpoints <= 0)
         {
-            GameManager.Instance.TrackedEnemies.Remove(gameObject);
+            //.
             if (UseCallback)
             {
-                if (GameManager.Instance.useDelegates)
+                if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
                     D_onDeathCallback?.Invoke();
                 else
                     UE_onDeathCallback?.Invoke();
@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (GameManager.Instance.useDelegates)
+        if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
             D_onDamageCallback?.Invoke();
         else
             UE_onDamageCallback?.Invoke();
