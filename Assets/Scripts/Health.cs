@@ -30,16 +30,10 @@ public class Health : MonoBehaviour
         Hitpoints += _hp;
         if (Hitpoints <= 0)
         {
-            if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
-                D_onDeathCallback?.Invoke();
-            else
-                UE_onDeathCallback?.Invoke();
+            D_onDeathCallback?.Invoke();
             if (!DontDestroy)
                 Destroy(gameObject);
         }
-        if (GlobalPrefs.CallbackMode == GlobalPrefs.CallbackType.Delegates)
-            D_onDamageCallback?.Invoke();
-        else
-            UE_onDamageCallback?.Invoke();
+        D_onDamageCallback?.Invoke();
     }
 }
