@@ -12,8 +12,8 @@ public class Health : MonoBehaviour
     public bool DontDestroy = false;
 
     //Please use these, I worked hard on these :(
-    public SimpleCallback D_onDeathCallback;
-    public SimpleCallback D_onDamageCallback;
+    public SimpleCallback onDeathCallback;
+    public SimpleCallback onDamageCallback;
     
     //Don't use these they're too simple :)
     // Also full qualifying 
@@ -30,10 +30,10 @@ public class Health : MonoBehaviour
         Hitpoints += _hp;
         if (Hitpoints <= 0)
         {
-            D_onDeathCallback?.Invoke();
+            onDeathCallback?.Invoke();
             if (!DontDestroy)
                 Destroy(gameObject);
         }
-        D_onDamageCallback?.Invoke();
+        onDamageCallback?.Invoke();
     }
 }
