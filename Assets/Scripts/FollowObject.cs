@@ -103,8 +103,8 @@ public class FollowObject : MonoBehaviour
             }
             else if (((int)NoOffset & 0b0010) == 0b0000 && !offsetZDone)
             {
-                SetZ();
-                //newPos.z = transform.position.z + offset.z;
+                //SetZ();
+                newPos.z = transform.position.z + offset.z;
                 offsetZDone = true;
                 //offsetAppliedLock = new IntegerBoolean(offsetAppliedLock.Evaluate(0), offsetAppliedLock.Evaluate(1), true,  false);
             }
@@ -114,7 +114,7 @@ public class FollowObject : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError(e);
+            //Debug.LogError(e);
             enabled = false;
         }
     }
