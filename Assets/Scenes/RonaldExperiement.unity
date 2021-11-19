@@ -456,7 +456,7 @@ MonoBehaviour:
   followThis: {fileID: 76522462}
   offset: {x: 0, y: 0, z: -10}
   Position: 6
-  NoOffset: 12
+  NoOffset: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
