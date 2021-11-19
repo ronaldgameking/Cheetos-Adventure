@@ -605,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &987052576
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1448973984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,8 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb03ae3f55c7ee1408a20fe81d24e0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefabsEasy:
-  - {fileID: 2101128086}
+  levelPrefabsEasy: []
   levelPrefabsNormal: []
   levelPrefabsHard: []
   score: 0

@@ -10,6 +10,14 @@ public class LevelGeneration : MonoBehaviour
     //swap this with the score accual score system once that is finished this is just for testing
     [SerializeField] private int score;
 
+    private void Awake()
+    {
+        //gets all the prefabs from the right folders || sponsored by stackoverflow: https://stackoverflow.com/questions/53968958/how-can-i-get-all-prefabs-from-a-assets-folder-getting-not-valid-cast-exception and unity documentation: https://docs.unity3d.com/ScriptReference/Resources.Load.html
+        levelPrefabsEasy = Resources.LoadAll<GameObject>("LevelPresets/Easy");
+        levelPrefabsNormal = Resources.LoadAll<GameObject>("LevelPresets/Normal");
+        levelPrefabsHard = Resources.LoadAll<GameObject>("LevelPresets/Hard");
+    }
+
     //Generates a random level preset based on score
     public void PresetSpawner()
     {
