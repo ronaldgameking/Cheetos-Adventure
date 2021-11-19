@@ -3,9 +3,9 @@ using UnityEngine;
 public class LevelGeneration : MonoBehaviour
 {
     //Lists for the easy normal and hard presets
-    [SerializeField] private GameObject[] levelPrefabsEasy;
-    [SerializeField] private GameObject[] levelPrefabsNormal;
-    [SerializeField] private GameObject[] levelPrefabsHard;
+    private GameObject[] levelPrefabsEasy;
+    private GameObject[] levelPrefabsNormal;
+    private GameObject[] levelPrefabsHard;
 
     //swap this with the score accual score system once that is finished this is just for testing
     [SerializeField] private int score;
@@ -18,7 +18,9 @@ public class LevelGeneration : MonoBehaviour
         levelPrefabsHard = Resources.LoadAll<GameObject>("LevelPresets/Hard");
     }
 
-    //Generates a random level preset based on score
+    /// <summary>
+    /// Generates the next preset based on score
+    /// </summary>
     public void PresetSpawner()
     {
         //checks the score (accual score numbers are tbd)
