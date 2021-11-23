@@ -7978,6 +7978,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d76159a54d83ae4a82046614cf4a221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuScenes: 1
+  creditsLoc: 0
+  BeerImage: {fileID: 0}
+  JulianImage: {fileID: 0}
 --- !u!4 &2100109988
 Transform:
   m_ObjectHideFlags: 0
@@ -7986,7 +7990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100109986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 913.65137, y: 566.6252, z: -98.32769}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
