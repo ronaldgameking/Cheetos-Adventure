@@ -7694,7 +7694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1814736455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8134,7 +8134,6 @@ MonoBehaviour:
   Speed: 3
   StepTime: 0.01
   StoppingDistance: 1
-  up: {x: 0, y: 0, z: 0}
 --- !u!1 &2100109986
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,8 +8165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuScenes: 1
   creditsLoc: 0
-  BeerImage: {fileID: 0}
-  JulianImage: {fileID: 0}
 --- !u!4 &2100109988
 Transform:
   m_ObjectHideFlags: 0

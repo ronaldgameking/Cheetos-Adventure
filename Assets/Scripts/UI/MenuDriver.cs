@@ -10,8 +10,6 @@ public class MenuDriver : MonoBehaviour
     private int menuScenes;
     [SerializeField]
     private int creditsLoc;
-    public GameObject BeerImage;
-    public GameObject JulianImage;
 
     public void PlayButton()
     {
@@ -44,10 +42,10 @@ public class MenuDriver : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ToStats()
-    {
-        SceneManager.LoadScene(2);
-    }
+    //public void ToStats()
+    //{
+    //    SceneManager.LoadScene(2);
+    //}
 
     public void ToSettings()
     {

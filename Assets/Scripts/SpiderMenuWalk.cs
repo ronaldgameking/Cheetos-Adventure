@@ -9,7 +9,6 @@ public class SpiderMenuWalk : MonoBehaviour
     public float StepTime = .1f;
     public float StoppingDistance = 1f;
 
-    [SerializeField] private Vector3 up;
     private int currentPoint = 0;
     private float m_timer;
     private float distance;
@@ -18,13 +17,11 @@ public class SpiderMenuWalk : MonoBehaviour
     private void Update()
     {
         Debug.Log(Points[currentPoint].point.position + " " + Points[currentPoint].JumpsTo + "[" + currentPoint + "/" + Points.Count + "]");
-        
         Debug.Log("MOV");
         if (m_timer > StepTime)
         {
             transform.position = Vector2.MoveTowards(transform.position, Points[currentPoint].point.position, Speed);
             transform.transform.right = Points[currentPoint].point.position - transform.position;
-            //transform.LookAt(Points[currentPoint].point.position, up);
             distance = Vector2.Distance(transform.position, Points[currentPoint].point.position);
             m_timer = 0;
             if (distance <= StoppingDistance)
