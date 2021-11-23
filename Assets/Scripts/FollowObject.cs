@@ -119,6 +119,9 @@ public class FollowObject : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Debug function
+    /// </summary>
     private void SetZ()
     {
         Vector3 pos = transform.position;
