@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     public SimpleCallback onDeathCallback;
     public SimpleCallback onDamageCallback;
     
-    //Don't use these they're too simple :)
+    //Don't use these they're too simple :) also they don't work cuz removed from implementation
     // Also full qualifying 
     public UnityEngine.Events.UnityEvent UE_onDeathCallback;
     public UnityEngine.Events.UnityEvent UE_onDamageCallback;
