@@ -6,6 +6,8 @@ using UnityUtils.delegates;
 
 public class Health : MonoBehaviour
 {
+    public static Health Instance;
+
     public int MaxHp { get; private set; }
 
     public int Hitpoints;
@@ -22,6 +24,15 @@ public class Health : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         MaxHp = Hitpoints;
     }
 
