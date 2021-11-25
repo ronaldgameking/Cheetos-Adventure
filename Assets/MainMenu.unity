@@ -282,15 +282,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2100109987}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: PlayButton
-        m_Mode: 1
+        m_TargetAssemblyTypeName: MenuDriver, Assembly-CSharp
+        m_MethodName: GoTo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: game
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &183469183
@@ -7331,14 +7331,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2100109987}
         m_TargetAssemblyTypeName: MenuDriver, Assembly-CSharp
-        m_MethodName: ToCredits
-        m_Mode: 1
+        m_MethodName: GoTo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: credits
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1560053691
@@ -7694,7 +7694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1814736455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7774,14 +7774,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2100109987}
         m_TargetAssemblyTypeName: MenuDriver, Assembly-CSharp
-        m_MethodName: ToSettings
-        m_Mode: 1
+        m_MethodName: GoTo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: settings
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1814736458

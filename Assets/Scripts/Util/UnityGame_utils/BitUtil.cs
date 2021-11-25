@@ -2,10 +2,11 @@
 
 namespace UnityUtils
 {
+
     /// <summary>
     /// Integer conversion class
     /// </summary>
-    public class IntegerUtil
+    public static class IntegerUtil
     {
         /// <summary>
         /// Convert 2 Int32 to 1 Int64 (long)

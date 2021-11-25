@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityUtils;
+using System;
 
 public class MenuDriver : MonoBehaviour
 {
+    public Dictionary<string, int> SceneLocations = new Dictionary<string, int>(); 
     [SerializeField]
     private int menuScenes;
     [SerializeField]
     private int creditsLoc;
+
+    private void Awake()
+    {
+        if (PlayerPrefsExt.GetInt("game.initialized", 0) == 0)
+        {
+
+        }
+        SceneLocations.Add("main", 0);
+        SceneLocations.Add("game", 3);
+        SceneLocations.Add("credits", 1);
+        SceneLocations.Add("settings", 2);
+    }
 
     public void PlayButton()
     {
@@ -31,11 +46,12 @@ public class MenuDriver : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    [Obsolete("use GoTo(String) instead")]
     public void ToCredits()
     {
         SceneManager.LoadScene(1);
     }
+    [Obsolete("use GoTo(String) instead")]
     public void ToMain()
     {
         //if (GameManager.Instance != null) GameManager.Instance.HandlePause();
@@ -47,9 +63,22 @@ public class MenuDriver : MonoBehaviour
     //    SceneManager.LoadScene(2);
     //}
 
+    [Obsolete("use GoTo(String) instead")]
     public void ToSettings()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public void GoTo(string destination)
+    {
+        if (SceneLocations.TryGetValue(destination, out int targetIndex))
+        {
+            SceneManager.LoadScene(targetIndex);
+        }
+        else
+        {
+            Debug.LogWarning(string.Format("Scene with name {0}", destination));
+        }
     }
 
     public void PopImage(GameObject popup)
