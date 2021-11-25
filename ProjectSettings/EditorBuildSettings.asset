@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: 8dbba1597085f194d99c0c6f784721bb
   - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6f4186d570a23d441969cdf7c0888fad
+  - enabled: 1
     path: Assets/Scenes/MainGame.unity
     guid: 332325b81dac2c347a08a2e78ac5394a
-  - enabled: 1
-    path: Assets/Scenes/RonaldExperiement.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
