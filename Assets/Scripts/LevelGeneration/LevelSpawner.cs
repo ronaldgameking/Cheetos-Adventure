@@ -3,7 +3,12 @@ using UnityEngine;
 public class LevelSpawner : MonoBehaviour
 {
     //needed to be able to call the preset spawner
-    [SerializeField] private LevelGeneration levelGeneration;
+    private LevelGeneration levelGeneration;
+
+    private void Awake()
+    {
+       levelGeneration = GetComponentInParent<LevelGeneration>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

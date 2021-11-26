@@ -327,7 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058362d70c0b28944b007da6374deccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGeneration: {fileID: 4467432435443137893}
 --- !u!1 &4467432435443137899
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,4 +373,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb03ae3f55c7ee1408a20fe81d24e0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
