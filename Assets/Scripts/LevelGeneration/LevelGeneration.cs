@@ -21,19 +21,26 @@ public class LevelGeneration : MonoBehaviour
     public void PresetSpawner()
     {
         //checks the score (accual score numbers are tbd)
-        if (ScoreSystem.Instance.Score < 10 && ScoreSystem.Instance.Score < 20)
+        if (ScoreSystem.Instance.Score >= 0 && ScoreSystem.Instance.Score < 20)
         {
+            Debug.Log("spawn1");
             //gets a random preset from the easy presets
             int rando = Random.Range(0, levelPrefabsEasy.Length); 
             Debug.Log(rando);
             //stantiates the level preset in the right place
             Instantiate(levelPrefabsEasy[rando], new Vector2(transform.position.x + transform.GetChild(0).localScale.x, transform.position.y), Quaternion.identity);
-        } else if (ScoreSystem.Instance.Score >= 20 && ScoreSystem.Instance.Score < 40)
+        } 
+        else if (ScoreSystem.Instance.Score >= 20 && ScoreSystem.Instance.Score < 40)
         {
+            Debug.Log("spawn2");
+
             int rando = Random.Range(0, levelPrefabsNormal.Length);
             Instantiate(levelPrefabsNormal[rando], new Vector2(transform.position.x + transform.GetChild(0).localScale.x, transform.position.y), Quaternion.identity);
-        } else if (ScoreSystem.Instance.Score >= 40)
+        } 
+        else if (ScoreSystem.Instance.Score >= 40)
         {
+            Debug.Log("spawn3");
+
             int rando = Random.Range(0, levelPrefabsHard.Length);
             Instantiate(levelPrefabsHard[rando], new Vector2(transform.position.x + transform.GetChild(0).localScale.x, transform.position.y), Quaternion.identity);
         }
