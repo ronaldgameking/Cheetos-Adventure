@@ -8,7 +8,6 @@ public class DamageBlock : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(collision.gameObject);
-        //TODO replace with do damage instead
+        Health.Instance.ModifyHealth(-damageAmount);
     }
 }
