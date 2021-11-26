@@ -19,7 +19,7 @@ public static unsafe class C
         a = null;
         GC.Collect();
     }
-    
+
     //private static void free<T>(ref T a) where T : class
     //{
     //    a = null;
