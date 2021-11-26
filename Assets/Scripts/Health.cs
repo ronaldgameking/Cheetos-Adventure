@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityUtils.delegates;
 
 
@@ -33,6 +34,7 @@ public class Health : MonoBehaviour
             Instance = this;
         }
 
+        onDeathCallback += ChangeTOGameOver;
         MaxHp = Hitpoints;
     }
 
@@ -46,5 +48,10 @@ public class Health : MonoBehaviour
                 Destroy(gameObject);
         }
         onDamageCallback?.Invoke();
+    }
+
+    public void ChangeTOGameOver()
+    {
+        SceneManager.LoadScene(4);
     }
 }
