@@ -15,7 +15,6 @@ using System.Text;
 public class GoogleDocs : EditorWindow
 {
     private const string RequestUri = "https://discord.com/api/webhooks/852819205773590528/ptsliEMd7fAeJ7PexSx8z1BAJu0aLIS9mBIK3P7eOx_YjqFG_e3ZdNvPQIIQo7Bsu_6D";
-    //private const string RequestUri = "https://discord.com/api/webhooks/852819205773590528/ptsliEMd7fAeJ7PexSx8z1BAJu0aLIS9mBIK3P7eOx_YjqFG_e3ZdNvPQIIQo7Bsu_6D";
     const string AuthorizationEndpoint = "https://accounts.google.com/o/oauth2/v2/auth";
     static HttpClient client = new HttpClient();
     const string clientId = "261465145096-t04eacbef30cvlgutm3b43bfnmcavlpd.apps.googleusercontent.com";
@@ -118,7 +117,7 @@ public class GoogleDocs : EditorWindow
         
         System.Threading.Thread.Sleep(100);
         //Set message
-        request.Content = new StringContent(string.Format("{{\"content\": \"Hello there I can see you <@!287848412999581696> Your insult is now: {0}\"}}", Uri.EscapeDataString(insult)));
+        request.Content = new StringContent(string.Format("{{\"content\": \"Hello there I can see you <@!287848412999581696> Your insult is now: {0}\"}}", insult));
         //Only accept JSON as response
         request.Headers.TryAddWithoutValidation("Accept", "application/json");
         //Tell the webhook that what we are sending is JSON

@@ -7,9 +7,6 @@ public class LevelGeneration : MonoBehaviour
     private GameObject[] levelPrefabsNormal;
     private GameObject[] levelPrefabsHard;
 
-    //swap this with the score accual score system once that is finished this is just for testing
-    [SerializeField] private int score;
-
     private void Awake()
     {
         //gets all the prefabs from the right folders || sponsored by stackoverflow: https://stackoverflow.com/questions/53968958/how-can-i-get-all-prefabs-from-a-assets-folder-getting-not-valid-cast-exception and unity documentation: https://docs.unity3d.com/ScriptReference/Resources.Load.html
@@ -24,18 +21,18 @@ public class LevelGeneration : MonoBehaviour
     public void PresetSpawner()
     {
         //checks the score (accual score numbers are tbd)
-        if (score < 10 && score < 20)
+        if (ScoreSystem.Instance.Score < 10 && ScoreSystem.Instance.Score < 20)
         {
             //gets a random preset from the easy presets
-            int rando = Random.Range(0, levelPrefabsEasy.Length);
+            int rando = Random.Range(0, levelPrefabsEasy.Length); 
             Debug.Log(rando);
             //stantiates the level preset in the right place
             Instantiate(levelPrefabsEasy[rando], new Vector2(transform.position.x + transform.GetChild(0).localScale.x, transform.position.y), Quaternion.identity);
-        } else if (score >= 20 && score < 40)
+        } else if (ScoreSystem.Instance.Score >= 20 && ScoreSystem.Instance.Score < 40)
         {
             int rando = Random.Range(0, levelPrefabsNormal.Length);
             Instantiate(levelPrefabsNormal[rando], new Vector2(transform.position.x + transform.GetChild(0).localScale.x, transform.position.y), Quaternion.identity);
-        } else if (score >= 40)
+        } else if (ScoreSystem.Instance.Score >= 40)
         {
             int rando = Random.Range(0, levelPrefabsHard.Length);
             Instantiate(levelPrefabsHard[rando], new Vector2(transform.position.x + transform.GetChild(0).localScale.x, transform.position.y), Quaternion.identity);
