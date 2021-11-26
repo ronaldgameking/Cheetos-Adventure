@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hitpoints: 1
-  DontDestroy: 0
+  DontDestroy: 1
   UE_onDeathCallback:
     m_PersistentCalls:
       m_Calls: []

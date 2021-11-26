@@ -16,22 +16,23 @@ public class SpiderMenuWalk : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Points[currentPoint].point.position + " " + Points[currentPoint].JumpsTo + "[" + currentPoint + "/" + Points.Count + "]");
-        Debug.Log("MOV");
         if (m_timer > StepTime)
         {
+            Debug.Log(Points[currentPoint].point.position + " " + Points[currentPoint].JumpsTo + "[" + currentPoint + "/" + Points.Count + "]");
             transform.position = Vector2.MoveTowards(transform.position, Points[currentPoint].point.position, Speed);
             transform.transform.right = Points[currentPoint].point.position - transform.position;
             distance = Vector2.Distance(transform.position, Points[currentPoint].point.position);
             m_timer = 0;
             if (distance <= StoppingDistance)
             {
+                Debug.Log("MOV");
                 currentPoint++;
                 if (currentPoint >= Points.Count)
                     currentPoint = 0;
 
                 if (Points[currentPoint].JumpsTo)
                 {
+                    Debug.Log("JMP");
                     transform.position = Points[currentPoint].point.position;
                     currentPoint++;
                     if (currentPoint >= Points.Count)
